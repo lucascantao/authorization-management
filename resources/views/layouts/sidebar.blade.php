@@ -1,5 +1,5 @@
 <div class="d-flex flex-column fixed-top" id="sidebar">
-    <img id="sidebar-img" src="{{asset('images/sidebar-bg.png')}}">
+    {{-- <img id="sidebar-img" src="{{asset('images/sidebar-bg.png')}}"> --}}
     <div class="d-flex justify-content-between align-middle p-3 text-white">
         MENU
     </div>
