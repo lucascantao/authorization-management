@@ -1,14 +1,19 @@
 :root {
   --app-primary: #593370;
-  --app-secondary: #ff5f29;
-}
+  --app-secondary: #ff6600;
+  --app-button-pressed: #ffc13c;
+  --app-background-dark1: rgb(14, 14, 14);
+  --app-background-dark2: rgb(38, 38, 38);
+  --app-text: rgb(230, 225, 229);
+} 
 
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
 }
 
 body {
-  background-color: #dbe6ee;
+  background-color: var(--app-background-dark1);
 }
 
 nav {
@@ -126,7 +131,7 @@ select {
   height: 100vh;
   width: 250px;
   margin-top: 5.5rem;
-  background-color: var(--app-primary);
+  background-color: var(--app-background-dark2);
   overflow: hidden;
 }
 
@@ -135,12 +140,26 @@ select {
   z-index: -1;
 }
 
+/* CONTENT */
+
 #content {
   position: relative;
+  width: 100%;
+
+  color: var(--app-text);
+
   margin-left: 250px;
   margin-bottom: 56px;
-  width: 100%;
 }
+
+#content-header {
+  background-color: var(--app-secondary);
+  color: white;
+  width: fit-content;
+  padding: 8px 2rem 8px 1rem;
+}
+
+/* END CONTENT */
 
 #profile-edit i {
   font-size: 24px ;
@@ -163,13 +182,21 @@ select {
 .btn-semas {
   background-color: var(--app-primary);
   color: white;
+  box-shadow: 2px 4px 0px 0px rgba(0, 0, 0, 0.494);
 }
 
 .btn-semas:hover,
 .btn-semas:focus {
   background-color: var(--app-secondary);
   color: white;
-  box-shadow: 0 0 0 .25rem rgba(253, 117, 13, 0.25);
+  box-shadow: 2px 4px 0px 0px rgba(0, 0, 0, 0.494);
+}
+
+.btn-semas:active {
+  position: relative;
+  background-color: var(--app-button-pressed) !important;
+  box-shadow: none;
+  transform: translateY(4px);
 }
 
 .btn-semas:disabled {
@@ -187,7 +214,7 @@ select {
   /* background-color: #3152ac3a; */
   color: var(--app-secondary);
   border: solid 1px var(--app-secondary);
-  box-shadow: 0 0 0 .25rem rgba(253, 117, 13, 0.25);
+  box-shadow: none
 }
 
 /* .btn-outline-semas */
@@ -200,18 +227,18 @@ select {
 .btn-outline-semas:hover {
   background-color: var(--app-secondary);
   color: white;
-  box-shadow: 0 0 0 .25rem rgba(253, 117, 13, 0.25);
+  box-shadow: none
 }
 
 /* .btn-opaque-semas */
 .btn-opaque-semas {
   background-color: transparent;
-  color: var(--app-primary);
+  color: var(--app-secondary);
 }
 
 .btn-opaque-semas:hover {
   background-color: var(--app-secondary);
-  color: white;
+  color: var(--app-background-dark2);
 }
 
 /* .btn-opaque-semas-light */
@@ -241,7 +268,8 @@ select {
 
 .nav-link {
   border-radius: 2px !important;
-  margin: 0px 3px;
+  margin: 6px;
+  background-color: var(--app-primary);
 }
 
 .nav-link:hover {
@@ -297,6 +325,22 @@ select {
 
 .modal-option-cancel:hover {
   color: black;
+}
+
+.card {
+  background-color: var(--app-background-dark2);
+}
+
+#logout {
+  background-color: var(--app-background-dark2);
+  border: dashed yellow 1px;
+  color: yellow;
+}
+
+/* TABLES */
+
+table th {
+  color: var(--app-secondary) !important;
 }
 
 @media (max-width: 1080px) {

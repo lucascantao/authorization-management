@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RotaController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +17,12 @@ Route::get('/dashboard', function () {
 //Users
 Route::prefix('user')->middleware(['auth'])->group(function() {
     Route::get('/', [UserController::class, 'index'])->name('user.index');    
+});
+
+
+//Rotas
+Route::prefix('rota')->middleware(['auth'])->group(function() {
+    Route::get('/', [RotaController::class, 'index'])->name('rota.index');    
 });
 
 Route::middleware('auth')->group(function () {

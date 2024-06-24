@@ -9,13 +9,14 @@
                 <i class="bi bi-file-earmark-check-fill"></i>
                 <span>Registros</span></a>
         </li>
+         --}}
 
         <li>
-            <a href="{{route('setor.index')}}" class="nav-link text-white align-middle">
-                <i class="bi bi-archive-fill"></i>
-                <span>Setores</span>
+            <a href="{{route('rota.index')}}" class="nav-link text-white align-middle">
+                <i class="bi bi-sign-turn-slight-right-fill"></i>
+                <span>Rotas</span>
             </a>
-        </li> --}}
+        </li>
 
         <li>
             <a href="{{route('user.index')}}" class="nav-link text-white align-middle">

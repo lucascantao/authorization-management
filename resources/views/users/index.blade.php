@@ -1,7 +1,7 @@
 @extends('app')
 @section('content')
-<div class="bg-white p-1">
-    <i class="bi bi-archive-fill"></i>
+<div id="content-header">
+    <i class="bi bi-people-fill"></i>
     Usuarios
 </div>
 
@@ -64,7 +64,7 @@
         <table id="user_table" class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col" class="text-center">Id</th>
+                    <th scope="col" class="text-center col-1">Id</th>
                     <th scope="col" class="text-center">Usuário</th>
                     <th scope="col" class="text-center col-1" >Ação</th>
                 </tr>
