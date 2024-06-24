@@ -5,7 +5,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(route('user.index'));
 });
 
 Route::get('/dashboard', function () {
@@ -14,7 +14,9 @@ Route::get('/dashboard', function () {
 
 
 //Users
-Route::get('/users', [UserController::class, 'index'])->name('user.index');
+Route::prefix('user')->middleware(['auth'])->group(function() {
+    Route::get('/', [UserController::class, 'index'])->name('user.index');    
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
