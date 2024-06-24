@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('perfil_id')->constrained('perfis')->nullable();
             $table->foreignId('rota_id')->constrained('rotas')->nullable();
+            $table->boolean('create');
+            $table->boolean('read');
+            $table->boolean('update');
+            $table->boolean('delete');
             $table->timestamps();
         });
     }
