@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('perfis', function (Blueprint $table) {
+        Schema::create('rotas', function (Blueprint $table) {
             $table->id();
-            $table->string('nome')->unique();
-            $table->foreignId('rota_id')->constrained('rotas')->nullable();
+            $table->string('endpoint')->unique();
             $table->timestamps();
         });
     }

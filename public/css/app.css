@@ -1,3 +1,12 @@
+:root {
+  --app-primary: #593370;
+  --app-secondary: #ff5f29;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 body {
   background-color: #dbe6ee;
 }
@@ -7,7 +16,7 @@ nav {
   z-index: 10;
   height: 5.5rem;
   overflow: hidden;
-  background-color: #08163e;
+  background-color: var(--app-primary);
 }
 
 nav #nav-img {
@@ -22,7 +31,7 @@ nav #logo {
 
 a {
   text-decoration: none;
-  color: #08163e;
+  color: var(--app-primary);
 }
 
 label {
@@ -42,7 +51,7 @@ select {
 }
 
 #authentication {
-  background-color: #08163e;
+  background-color: var(--app-primary);
   height: 100vh;
 }
 
@@ -64,7 +73,7 @@ select {
   width: 100%;
   outline: none;
   border: none;
-  border-bottom: 2px solid #08163e !important;
+  border-bottom: 2px solid var(--app-primary) !important;
   border-radius: 5px 5px 0 0 !important;
   background-color: transparent;
 }
@@ -75,7 +84,7 @@ select {
   width: 100%;
   outline: none;
   border: none;
-  border-bottom: 2px solid #08163e !important;
+  border-bottom: 2px solid var(--app-primary) !important;
   border-radius: 5px 5px 0 0;
 }
 
@@ -117,7 +126,7 @@ select {
   height: 100vh;
   width: 250px;
   margin-top: 5.5rem;
-  background-color: #08163e;
+  background-color: var(--app-primary);
   overflow: hidden;
 }
 
@@ -147,15 +156,15 @@ select {
 
 /* .btn-semas */
 .btn-semas {
-  background-color: #08163e;
+  background-color: var(--app-primary);
   color: white;
 }
 
 .btn-semas:hover,
 .btn-semas:focus {
-  background-color: #08163e;
+  background-color: var(--app-secondary);
   color: white;
-  box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
+  box-shadow: 0 0 0 .25rem rgba(253, 117, 13, 0.25);
 }
 
 .btn-semas:disabled {
@@ -164,39 +173,39 @@ select {
 
 /* .btn-semas-secondary */
 .btn-semas-secondary {
-  background-color: #3152ac3a;
-  color: #08163e;
-  border: solid 1px #08163e;
+  /* background-color: #3152ac3a; */
+  color: var(--app-primary);
+  border: solid 1px var(--app-primary);
 }
 
 .btn-semas-secondary:hover {
-  background-color: #3152ac3a;
-  color: #08163e;
-  border: solid 1px #08163e;
-  box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
+  /* background-color: #3152ac3a; */
+  color: var(--app-secondary);
+  border: solid 1px var(--app-secondary);
+  box-shadow: 0 0 0 .25rem rgba(253, 117, 13, 0.25);
 }
 
 /* .btn-outline-semas */
 .btn-outline-semas {
   background-color: transparent;
-  color: #08163e;
-  border: solid 1px #08163e;
+  color: var(--app-primary);
+  border: solid 1px var(--app-primary);
 }
 
 .btn-outline-semas:hover {
-  background-color: #08163e;
+  background-color: var(--app-secondary);
   color: white;
-  box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
+  box-shadow: 0 0 0 .25rem rgba(253, 117, 13, 0.25);
 }
 
 /* .btn-opaque-semas */
 .btn-opaque-semas {
   background-color: transparent;
-  color: #08163e;
+  color: var(--app-primary);
 }
 
 .btn-opaque-semas:hover {
-  background-color: #08163e;
+  background-color: var(--app-secondary);
   color: white;
 }
 
@@ -207,7 +216,7 @@ select {
 
 .btn-opaque-semas-light:hover {
   background-color: white;
-  color: #08163e;
+  color: var(--app-secondary );
 }
 
 /* .btn-opaque-semas-danger */
@@ -230,7 +239,7 @@ select {
 }
 
 .nav-link:hover span, .nav-link:hover i{
-  color: #08163e;
+  color: var(--app-secondary);
 }
 
 .overlay {
