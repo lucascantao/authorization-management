@@ -154,6 +154,11 @@ select {
   color: grey !important;
 }
 
+.btn {
+  border-radius: 2px !important;
+  transition: 0s;
+}
+
 /* .btn-semas */
 .btn-semas {
   background-color: var(--app-primary);
@@ -234,12 +239,18 @@ select {
   fill: currentColor;
 }
 
+.nav-link {
+  border-radius: 2px !important;
+  margin: 0px 3px;
+}
+
 .nav-link:hover {
-  background-color: #e6f2ff; /* cor de fundo de hover */
+  background-color: var(--app-secondary); /* cor de fundo de hover */
+  transition: 0s;
 }
 
 .nav-link:hover span, .nav-link:hover i{
-  color: var(--app-secondary);
+  color: white;
 }
 
 .overlay {
