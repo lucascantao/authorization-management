@@ -11,7 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('rotas', function (Blueprint $table) {
+            $table->id();
+            $table->string('endpoint')->unique();
+            $table->foreignId('perfil_id')->constrained('perfis')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
