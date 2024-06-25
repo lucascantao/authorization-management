@@ -1,0 +1,20 @@
+.navbar {
+    border-bottom: solid black 2px !important;
+}
+
+#content-header {
+    border-right: solid black 2px !important;
+    border-bottom: solid black 2px !important;
+}
+
+#sidebar {
+    border-right: solid black 2px !important;
+}
+
+table {
+    border: solid black 1px !important;
+}
+
+.card {
+    border: solid black 2px !important;
+}

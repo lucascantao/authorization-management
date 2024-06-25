@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg sticky-top py-3">
+<nav class="navbar navbar-expand-lg sticky-top py-3 border border-b-2">
     {{-- <img id="nav-img" src="{{asset('images/header-bg.png')}}"> --}}
     <div class="d-flex justify-content-between align-items-center w-100">
         <span id="logo" ><a href="/"><img src="{{asset('images/logo.png')}}" height="64px" alt="" style="color: white"></a></span>
