@@ -18,7 +18,7 @@
                     <option value="excluido">Excluído</option>
                 </select>
             </div>
-            
+
             @if(Auth::user()->perfil_id==3)
             <div class="col-lg-3 col-md-4 col-sm-12">
                 <label class="form-label" for="usuario_user">Usuário</label>
@@ -73,9 +73,9 @@
                 @foreach($users as $user)
                 <tr>
                     <td class="text-center">{{$user->id}}</td>
-                    <td class="text-center">{{$user->name}}</td>                    
+                    <td class="text-center">{{$user->name}}</td>
                     <td class="text-center" style="white-space: nowrap !important">
-                        <a class="btn btn-opaque-semas me-1" href="{{route('user.index', ['id' => $user->id])}}"><span><i class="bi bi-eye-fill"></i></span></a>
+                        <a class="btn btn-opaque-semas me-1" href="{{route('user.edit', ['id' => $user->id])}}"><span><i class="bi bi-eye-fill"></i></span></a>
                     </td>
                 </tr>
                 @endforeach
@@ -137,7 +137,7 @@
     // $('#usuario_user').on('change', function() {
     //     user_table.column(1).search(this.value).draw();
     // });
-  
+
     // $('#status_user').on('change', function() {
     //     user_table.column(4).search(this.value).draw();
     // });
@@ -159,7 +159,7 @@
     // });
 
     // $('#botaoImprimir').on('click', function() {
-    //     //Acionar o botão deGerar relatório do datatables 
+    //     //Acionar o botão deGerar relatório do datatables
     //     user_table.button('.buttons-print').trigger();
     // });
 

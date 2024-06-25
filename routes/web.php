@@ -30,7 +30,8 @@ Route::prefix('rota')->middleware(['auth'])->group(function() {
 //Users
 Route::prefix('user')->middleware(['auth'])->group(function() {
     Route::get('/', [UserController::class, 'index'])->name('user.index');
-
+    Route::get('/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
+    Route::put('/{id}/update', [UserController::class, 'update'])->name('user.update');
 });
 
 Route::middleware('auth')->group(function () {
