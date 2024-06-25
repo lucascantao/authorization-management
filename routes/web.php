@@ -23,6 +23,7 @@ Route::prefix('user')->middleware(['auth'])->group(function() {
 //Rotas
 Route::prefix('rota')->middleware(['auth'])->group(function() {
     Route::get('/', [RotaController::class, 'index'])->name('rota.index');    
+    Route::get('/{id}/detail', [RotaController::class, 'detail'])->name('rota.detail');    
 });
 
 Route::middleware('auth')->group(function () {

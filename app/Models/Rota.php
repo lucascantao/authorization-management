@@ -16,7 +16,7 @@ class Rota extends Model
 
     public function perfis(): BelongsToMany
     {
-        return $this->belongsToMany(Perfil::class, 'perfil_rotas');
+        return $this->belongsToMany(Perfil::class, 'perfil_rotas')->withPivot(['create', 'read', 'update', 'delete']);
     }
     
 }

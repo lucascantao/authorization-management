@@ -76,7 +76,7 @@
                     <td class="text-center">{{$rota->id}}</td>
                     <td class="text-center">/{{$rota->endpoint}}</td>                    
                     <td class="text-center" style="white-space: nowrap !important">
-                        <a class="btn btn-opaque-semas me-1" href="{{route('rota.index', ['id' => $rota->id])}}"><span><i class="bi bi-eye-fill"></i></span></a>
+                        <a class="btn btn-opaque-semas me-1" href="{{route('rota.detail', ['id' => $rota->id])}}"><span><i class="bi bi-gear-fill"></i></span></a>
                     </td>
                 </tr>
                 @endforeach
