@@ -2,8 +2,8 @@
 @section('content')
 
 <div id="content-header">
-    <i class="bi bi-sign-turn-slight-right-fill"></i>
-    Rotas
+    <i class="bi bi-person-fill-check"></i>
+    Perfis
 </div>
 
 {{-- <div class="card border-0 m-4 px-6 py-6">
@@ -71,12 +71,12 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($rotas as $rota)
+                @foreach($perfis as $perfil)
                 <tr>
-                    <td class="text-center">{{$rota->id}}</td>
-                    <td class="text-center" style="font-style: italic"><span style="color: rgba(255, 255, 255, 0.459)">http://domain:port</span>/{{$rota->endpoint}}</td>
+                    <td class="text-center">{{$perfil->id}}</td>
+                    <td class="text-center">{{$perfil->nome}}</td>
                     <td class="text-center" style="white-space: nowrap !important">
-                        <a class="btn btn-opaque-semas me-1" href="{{route('rota.settings', ['id' => $rota->id])}}"><span><i class="bi bi-gear-fill"></i></span></a>
+                        <a class="btn btn-opaque-semas me-1" href="{{route('perfil.detail', ['id' => $perfil->id])}}"><span><i class="bi bi-gear-fill"></i></span></a>
                     </td>
                 </tr>
                 @endforeach

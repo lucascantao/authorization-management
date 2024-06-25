@@ -4,12 +4,12 @@
         MENU
     </div>
     <ul class="nav nav-pills flex-column">
-        {{-- <li>
-            <a href="{{route('registro.index')}}" class="nav-link text-white align-middle">
-                <i class="bi bi-file-earmark-check-fill"></i>
-                <span>Registros</span></a>
+        <li>
+            <a href="{{route('perfil.index')}}" class="nav-link text-white align-middle">
+                <i class="bi bi-person-fill-check"></i>
+                <span>Perfis</span></a>
         </li>
-         --}}
+
 
         <li>
             <a href="{{route('rota.index')}}" class="nav-link text-white align-middle">

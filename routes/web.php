@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\RotaController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -13,17 +13,24 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-
-//Users
-Route::prefix('user')->middleware(['auth'])->group(function() {
-    Route::get('/', [UserController::class, 'index'])->name('user.index');    
+//Perfis
+Route::prefix('perfil')->middleware(['auth'])->group(function() {
+    Route::get('/', [PerfilController::class, 'index'])->name('perfil.index');
+    Route::get('/{id}/detail', [PerfilController::class, 'detail'])->name('perfil.detail');
 });
-
 
 //Rotas
 Route::prefix('rota')->middleware(['auth'])->group(function() {
-    Route::get('/', [RotaController::class, 'index'])->name('rota.index');    
-    Route::get('/{id}/detail', [RotaController::class, 'detail'])->name('rota.detail');    
+    Route::get('/', [RotaController::class, 'index'])->name('rota.index');
+    Route::get('/{id}/settings', [RotaController::class, 'settings'])->name('rota.settings');
+    Route::get('/{id}/settings/create', [RotaController::class, 'createSettings'])->name('rota.settings.create');
+    Route::post('/settings/store', [RotaController::class, 'storeSettings'])->name('rota.settings.store');
+});
+
+//Users
+Route::prefix('user')->middleware(['auth'])->group(function() {
+    Route::get('/', [UserController::class, 'index'])->name('user.index');
+
 });
 
 Route::middleware('auth')->group(function () {

@@ -36,7 +36,7 @@
 
         <style>
             .selectize-input::after {
-                position: absolute !important;    
+                position: absolute !important;
                 top: 3px !important;
                 right: 0px !important;
                 content: ' '!important;
@@ -64,6 +64,18 @@
             </div>
         </main>
 
-        @include('layouts.footer')        
+        @include('layouts.footer')
     </body>
+    <script>
+        setTimeout(function() {
+            var notificationMessage = document.querySelector('#successMessage, #failedMessage');
+            if (notificationMessage) {
+                notificationMessage.classList.add('fade-out');
+                setTimeout(function() {
+                    notificationMessage.style.display = 'none';
+                }, 500); // 500ms corresponde à duração da transição CSS
+            }
+        }, 1500);
+</script>
+
 </html>

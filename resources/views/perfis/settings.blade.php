@@ -45,6 +45,6 @@
     <div class="mt-4">
         <a class="col-2 btn btn-secondary" href="{{route('rota.index')}}">Voltar</a>
     </div>
-    
+
 </div>
 @endsection
