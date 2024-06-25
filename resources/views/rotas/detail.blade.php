@@ -1,7 +1,7 @@
 @extends('app')
 @section('content')
 <div id="content-header">
-    <i class="bi bi-clipboard-fill"></i>
+    <i class="bi bi-gear-fill"></i>
     Detalhes da Rota
 </div>
 
@@ -23,12 +23,17 @@
 
         @foreach($rota->perfis as $perfil)
 
-        <div>
-            {{$perfil->nome}}
-            {{$perfil->pivot->create}}
-            {{$perfil->pivot->read}}
-            {{$perfil->pivot->update}}
-            {{$perfil->pivot->delete}}
+        <div class="d-flex justify-content-between permission-item">
+            <div>
+                <span><i class="bi bi-person-fill-gear"></i></span>
+                {{$perfil->nome}}
+            </div>
+            <div>
+                @if($perfil->pivot->create) <span style="color: greenyellow">C</span> @else <span style="color: red">C</span> @endif
+                @if($perfil->pivot->read) <span style="color: greenyellow">R</span> @else <span style="color: red">R</span> @endif
+                @if($perfil->pivot->update) <span style="color: greenyellow">U</span> @else <span style="color: red">U</span> @endif
+                @if($perfil->pivot->delete) <span style="color: greenyellow">D</span> @else <span style="color: red">D</span> @endif
+            </div>
         </div>
 
         @endforeach
