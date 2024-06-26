@@ -19,19 +19,15 @@ class Authorization
 
         dd($request->route());
         
-        return $next($request);
+        // return $next($request);
         
-        
-
         // dd(Auth::user()->perfil->rotas['0']->pivot->read);
         $uri = $request->route()->uri;
-        $route_configs = Auth::user()->perfil->rotas()->where('rotas.endpoint', $uri)->get();
+        $route_config = Auth::user()->perfil->rotas()->where('rotas.endpoint', $uri)->first();
 
-        foreach($route_configs as $config) {
-            dd($config->pivot);
-        }
+        dd($route_config);
 
-        dd($route_configs->pivot);
+        dd($route_config->pivot);
 
         return $next($request);
     }
