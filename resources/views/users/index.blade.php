@@ -65,7 +65,8 @@
             <thead>
                 <tr>
                     <th scope="col" class="text-center col-1">Id</th>
-                    <th scope="col" class="text-center">Usuário</th>
+                    <th scope="col" class="text-center">Nome</th>
+                    <th scope="col" class="text-center">Perfil</th>
                     <th scope="col" class="text-center col-1" >Ação</th>
                 </tr>
             </thead>
@@ -74,6 +75,7 @@
                 <tr>
                     <td class="text-center">{{$user->id}}</td>
                     <td class="text-center">{{$user->name}}</td>
+                    <td class="text-center">{{$user->perfil_id}}</td>
                     <td class="text-center" style="white-space: nowrap !important">
                         <a class="btn btn-opaque-semas me-1" href="{{route('user.edit', ['id' => $user->id])}}"><span><i class="bi bi-eye-fill"></i></span></a>
                     </td>

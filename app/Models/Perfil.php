@@ -20,4 +20,9 @@ class Perfil extends Model
     {
         return $this->belongsToMany(Rota::class, 'perfil_rotas');
     }
+
+    public function users(): HasMany
+    {
+        return $this->hasMany(User::class);
+    }
 }

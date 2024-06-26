@@ -2,12 +2,13 @@
 @section('title', 'usuarios')
 @section('content')
 
-<div class="bg-white p-1">
+<div id="content-header">
     <i class="bi bi-people-fill"></i>
     Editar Usuário
 </div>
 
 <div class="card border-0 card-body m-4 px-6 py-6">
+    @include('components.notification')
     Informações de Usuário
     <hr>
     <form action="{{route('user.update', ['id' => $user->id])}}" method="POST">
@@ -21,14 +22,9 @@
             <div class="col-6">
                 <label for="usuario_perfil" class="form-label">Perfil</label>
                 <select id="usuario_perfil" class="form-select" name="perfil_id">
-                    <option selected hidden value="null">Selecionar pefil</option>
+                    <option selected hidden value="">Selecionar pefil</option>
                     @foreach ($perfis as $perfil)
-                    @if ($perfil->id == $user->perfil_id)
-                        <option selected name="{{$perfil->nome}}" value="{{$perfil->id}}" id="">{{$perfil->nome}}</option>
-                    @else
                         <option name="{{$perfil->nome}}" value="{{$perfil->id}}" id="">{{$perfil->nome}}</option>
-                    @endif
-
                     @endforeach
                 </select>
             </div>
