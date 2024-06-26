@@ -20,5 +20,9 @@ class RotaSeeder extends Seeder
         Rota::create([
             'endpoint' => 'rota',
         ]);
+
+        Rota::create([
+            'endpoint' => 'produto',
+        ]);
     }
 }
