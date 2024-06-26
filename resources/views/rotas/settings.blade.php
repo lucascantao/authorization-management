@@ -2,9 +2,9 @@
 @section('content')
 <div id="content-header">
     <i class="bi bi-sign-turn-slight-right-fill"></i>
-    Rotas >
+    <a href="{{route('rota.index')}}">Rotas</a> >
     <i class="bi bi-gear-fill"></i>
-    Configurações > .../{{$rota->endpoint}}
+    /{{$rota->endpoint}}
 </div>
 
 <div class="card m-4 px-4 py-4">

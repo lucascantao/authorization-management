@@ -159,6 +159,15 @@ select {
   padding: 8px 2rem 8px 1rem;
 }
 
+#content-header a {
+  /* text-decoration: none; */
+  color: var(--app-secondary);
+}
+
+#content-header a:hover {
+  text-decoration: underline;
+}
+
 /* END CONTENT */
 
 #profile-edit i {
