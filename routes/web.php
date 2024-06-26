@@ -40,7 +40,7 @@ Route::prefix('user')->middleware(['auth'])->group(function() {
 
 
 //Produtos
-Route::resource('produto', ProdutosController::class)->middleware(['auth']);
+Route::resource('produto', ProdutosController::class)->middleware(['auth', 'authorization']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
