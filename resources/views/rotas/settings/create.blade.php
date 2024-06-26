@@ -15,14 +15,14 @@
             <div class="row mb-3">
                 <div class="col">
                     <label for="rota_id">rota</label>
-                    <select name="rota_id" id="rota_id">
+                    <select class="form-select" name="rota_id" id="rota_id">
                         <option selected value="{{$rota->id}}">{{$rota->endpoint}}</option>
                     </select>
                 </div>
 
                 <div class="col">
                     <label for="perfil_id">Perfil</label>
-                    <select name="perfil_id" id="perfil_id">
+                    <select class="form-select" name="perfil_id" id="perfil_id">
                         @foreach ($perfis as $perfil)
                             <option value="{{$perfil->id}}">{{$perfil->nome}}</option>
                         @endforeach

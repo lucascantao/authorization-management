@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\PerfilController;
+use App\Http\Controllers\ProdutosController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RotaController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +35,10 @@ Route::prefix('user')->middleware(['auth'])->group(function() {
     Route::get('/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
     Route::put('/{id}/update', [UserController::class, 'update'])->name('user.update');
 });
+
+
+//Produtos
+Route::resource('produto', ProdutosController::class)->middleware(['auth']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

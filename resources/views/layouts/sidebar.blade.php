@@ -25,5 +25,12 @@
             </a>
         </li>
 
+        <li>
+            <a href="{{route('produto.index')}}" class="nav-link text-white align-middle">
+                <i class="bi bi-bag-fill"></i>
+                <span>Produtos</span>
+            </a>
+        </li>
+
     </ul>
 </div>

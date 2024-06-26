@@ -31,6 +31,9 @@
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
+        <!-- Mask Money -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js" integrity="sha512-Rdk63VC+1UYzGSgd3u2iadi0joUrcwX0IWp2rTh6KXFoAmgOjRS99Vynz1lJPT8dLjvo6JZOqpAHJyfCEZ5KoA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
         <!-- Scripts -->
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
@@ -67,15 +70,15 @@
         @include('layouts.footer')
     </body>
     <script>
-        setTimeout(function() {
-            var notificationMessage = document.querySelector('#successMessage, #failedMessage');
-            if (notificationMessage) {
-                notificationMessage.classList.add('fade-out');
-                setTimeout(function() {
-                    notificationMessage.style.display = 'none';
-                }, 500); // 500ms corresponde à duração da transição CSS
-            }
-        }, 1500);
+        // setTimeout(function() {
+        //     var notificationMessage = document.querySelector('#successMessage, #failedMessage');
+        //     if (notificationMessage) {
+        //         notificationMessage.classList.add('fade-out');
+        //         setTimeout(function() {
+        //             notificationMessage.style.display = 'none';
+        //         }, 500); // 500ms corresponde à duração da transição CSS
+        //     }
+        // }, 1500);
 </script>
 
 </html>
