@@ -57,7 +57,7 @@
     <span>Relação de Usuarios</span>
     <hr>
     <div>
-        <a class="col-lg-2 btn btn-semas mb-2" href="{{route('user.index')}}" role="button"><i class="bi bi-plus-circle"></i> Cadastrar</a>
+        {{-- <a class="col-lg-2 btn btn-semas mb-2" href="{{route('user.index')}}" role="button"><i class="bi bi-plus-circle"></i> Cadastrar</a> --}}
         {{-- <button class="col-lg-2 btn btn-semas-secondary mb-2" id="botaoImprimir"><i class="bi bi-file-earmark-ruled me-2"></i>Gerar relatório</button> --}}
     </div>
     <div class="table-container">
