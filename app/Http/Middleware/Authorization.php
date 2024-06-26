@@ -17,54 +17,57 @@ class Authorization
     public function handle(Request $request, Closure $next): Response
     {
 
-        // dd($request->route());
 
-        // return $next($request);
-
-        // dd(Auth::user()->perfil->rotas['0']->pivot->read);
-
+        // Pegar uri completa da rota acessada
         $uri = $request->route()->uri; // Ex: produto/create
+
+        // Separar a string por '/'
         $chunks = explode("/", $uri);
+
+        // Pegar apenas o prefixo da rota
         $prefix = $chunks[0]; // Ex: produto
-        // $action = explode("/", $uri)[1]; // Ex: /create
 
-        // dd(explode("/", $uri)[1]);
+        // Pegar o perfil do usuário que está acessando
+        $perfil = Auth::user()->perfil;
 
+        // Se o usuário não tiver perfil, então autorize
+        if($perfil == null) {
+            return $next($request);
+        }
 
-        $route_config = Auth::user()->perfil->rotas()->where('rotas.endpoint', $prefix)->first();
+        // Pegar a relação da ROTA com o PERFIL
+        $route_config = $perfil->rotas()->where('rotas.endpoint', $prefix)->first();
 
-        // dd($route_config);
-
+        // Se não houver relação (restrição) de rota para esse perfil, então autorize
         if($route_config == null) {
             return $next($request);
         }
 
-        // dd(sizeof($chunks) == 1);
+    
+        $actions = [
+            'create' => $route_config->pivot->create,
+            'store' => $route_config->pivot->create,
+            'show' => $route_config->pivot->read,
+            'update' => $route_config->pivot->update,
+            'destroy' => $route_config->pivot->delete,
+        ];
 
+        // Se a for uma rota composta (se não for a index)
+        if(sizeof($chunks) > 1) {
 
-        // LÓGICA ESTÁ ERRADA
-        if(sizeof($chunks) == 1 && $route_config->pivot->read == 1) {
-            return $next($request);
-        } else {
-            dd('entrou');
-            return redirect(route('user.index'))->with('failed', 'Você não tem permissão para acessar essa rota');
-        }
+            // Pega a action no final da uri
+            $action = end($chunks);
 
-        dd(str_contains($uri, 'create'));
+            // Checa se essa action está no array como 1 (TRUE) ou 0 (FALSE), OU SEJA, se o PERFIL do USUÁRIO pode acessar essa ROTA específica
+            if($actions[$action]){
+                return $next($request);
+            }
 
-        if(str_contains($uri, 'create') && $route_config->pivot->create == 1){
-            return $next($request);
-        } else {
             return redirect(route($prefix . '.index'))->with('failed', 'Você não tem permissão para acessar essa rota');
+
         }
 
-
-
-        // dd($route_config);
-
-
-
-        // die();
+        return $next($request);
 
 
     }

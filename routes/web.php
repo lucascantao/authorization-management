@@ -40,7 +40,17 @@ Route::prefix('user')->middleware(['auth'])->group(function() {
 
 
 //Produtos
-Route::resource('produto', ProdutosController::class)->middleware(['auth', 'authorization']);
+Route::prefix('produto', ProdutosController::class)->middleware(['auth', 'authorization'])->group(function() {
+    Route::get('/', [ProdutosController::class, 'index'])->name('produto.index');
+    Route::get('/create', [ProdutosController::class, 'create'])->name('produto.create');
+    Route::post('/store', [ProdutosController::class, 'store'])->name('produto.store');
+
+    Route::get('/{produto}/show', [ProdutosController::class, 'show'])->name('produto.show');
+    Route::get('/{produto}/edit', [ProdutosController::class, 'edit'])->name('produto.edit');
+    Route::put('/{produto}/update', [ProdutosController::class, 'update'])->name('produto.update');
+    
+    Route::get('/{produto}/destroy', [ProdutosController::class, 'destroy'])->name('produto.destroy');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
