@@ -53,7 +53,7 @@
 
 <div class="card border-0 card-body m-4 px-6 py-6">
 
-    {{-- @include('components.notification') --}}
+    @include('components.notification')
 
     <span>Relação de Produtos</span>
     <hr>
