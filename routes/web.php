@@ -18,6 +18,8 @@ Route::get('/dashboard', function () {
 //Perfis
 Route::prefix('perfil')->middleware(['auth'])->group(function() {
     Route::get('/', [PerfilController::class, 'index'])->name('perfil.index');
+    Route::get('/create', [PerfilController::class, 'create'])->name('perfil.create');
+    Route::post('/', [PerfilController::class, 'store'])->name('perfil.store');
     Route::get('/{id}/detail', [PerfilController::class, 'detail'])->name('perfil.detail');
 });
 

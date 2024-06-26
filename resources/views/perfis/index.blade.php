@@ -58,7 +58,7 @@
     <span>Relação Perfis</span>
     <hr>
     <div>
-        <a class="col-lg-2 btn btn-semas mb-2" href="{{route('rota.index')}}" role="button">Novo Perfil<i class="bi bi-person-check ms-1"></i></a>
+        <a class="col-lg-2 btn btn-semas mb-2" href="{{route('perfil.create')}}" role="button">Novo Perfil<i class="bi bi-person-check ms-1"></i></a>
         {{-- <button class="col-lg-2 btn btn-semas-secondary mb-2" id="botaoImprimir"><i class="bi bi-file-earmark-ruled me-2"></i>Gerar relatório</button> --}}
     </div>
     <div class="table-container">
