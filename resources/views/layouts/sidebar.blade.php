@@ -10,6 +10,9 @@
                 <span>Produtos</span>
             </a>
         </li>
+
+        <hr>
+
         <li>
             <a href="{{route('perfil.index')}}" class="nav-link text-white align-middle">
                 <i class="bi bi-person-fill-check"></i>
@@ -29,5 +32,13 @@
             </a>
         </li>
 
+        <hr>
+
+        <li>
+            <a href="{{route('user.index')}}" class="nav-link text-white align-middle">
+                <i class="bi bi-wrench-adjustable"></i>
+                <span>Configurações</span>
+            </a>
+        </li>
     </ul>
 </div>

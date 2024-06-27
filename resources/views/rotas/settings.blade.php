@@ -45,7 +45,7 @@
     <hr>
 
     <div class="d-flex justify-content-center">
-        <a class="col-lg-2 btn btn-semas mb-2" href="{{route('rota.settings.create', ['id' => $rota->id])}}" role="button"><i class="bi bi-plus-circle"></i> Nova configuração</a>
+        <a class="col-lg-2 btn btn-semas mb-2" href="{{route('rota.settings.create', ['id' => $rota->id])}}" role="button">Nova configuração <i class="bi bi-wrench-adjustable"></i></a>
     </div>
 
     <div class="mt-4">

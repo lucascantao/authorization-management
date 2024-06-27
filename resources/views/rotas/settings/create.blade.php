@@ -4,7 +4,8 @@
     <i class="bi bi-sign-turn-slight-right-fill"></i>
     <a href="{{route('rota.index')}}">Rotas</a> >
     <i class="bi bi-gear-fill"></i>
-    <a href="{{route('rota.settings', ['id' => $rota->id])}}">/{{$rota->endpoint}}</a> > Nova Configuração
+    <a href="{{route('rota.settings', ['id' => $rota->id])}}">/{{$rota->endpoint}}</a> >
+    <i class="bi bi-wrench-adjustable me-1"></i>Nova Configuração
 </div>
 
 <div class="card m-4 px-4 py-4">
