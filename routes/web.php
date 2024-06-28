@@ -16,17 +16,17 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 //Perfis
-Route::prefix('perfil')->middleware(['auth'])->group(function() {
+Route::prefix('perfil')->middleware(['auth', 'authorization'])->group(function() {
     Route::get('/', [PerfilController::class, 'index'])->name('perfil.index');
     Route::get('/create', [PerfilController::class, 'create'])->name('perfil.create');
-    Route::post('/', [PerfilController::class, 'store'])->name('perfil.store');
+    Route::post('/store', [PerfilController::class, 'store'])->name('perfil.store');
     Route::get('/{id}/detail', [PerfilController::class, 'detail'])->name('perfil.detail');
 });
 
 //Rotas
-Route::prefix('rota')->middleware(['auth'])->group(function() {
+Route::prefix('rota')->middleware(['auth', 'authorization'])->group(function() {
     Route::get('/', [RotaController::class, 'index'])->name('rota.index');
-    Route::get('/{id}/settings', [RotaController::class, 'settings'])->name('rota.settings');
+    Route::get('/{id}/settings/show', [RotaController::class, 'settings'])->name('rota.settings');
     Route::get('/{rota_id}/settings/{perfil_id}/edit', [RotaController::class, 'editSettings'])->name('rota.settings.edit');
     Route::get('/{id}/settings/create', [RotaController::class, 'createSettings'])->name('rota.settings.create');
     Route::get('/{id}/settings/update', [RotaController::class, 'updateSettings'])->name('rota.settings.update');
@@ -34,7 +34,7 @@ Route::prefix('rota')->middleware(['auth'])->group(function() {
 });
 
 //Users
-Route::prefix('user')->middleware(['auth'])->group(function() {
+Route::prefix('user')->middleware(['auth', 'authorization'])->group(function() {
     Route::get('/', [UserController::class, 'index'])->name('user.index');
     Route::get('/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
     Route::put('/{id}/update', [UserController::class, 'update'])->name('user.update');
@@ -50,7 +50,7 @@ Route::prefix('produto', ProdutosController::class)->middleware(['auth', 'author
     Route::get('/{produto}/show', [ProdutosController::class, 'show'])->name('produto.show');
     Route::get('/{produto}/edit', [ProdutosController::class, 'edit'])->name('produto.edit');
     Route::put('/{produto}/update', [ProdutosController::class, 'update'])->name('produto.update');
-    
+
     Route::get('/{produto}/destroy', [ProdutosController::class, 'destroy'])->name('produto.destroy');
 });
 
