@@ -3,7 +3,6 @@
 <div id="content-header">
     <i class="bi bi-sign-turn-slight-right-fill"></i>
     <a href="{{route('rota.index')}}">Rotas</a> >
-    <i class="bi bi-gear-fill"></i>
     /{{$rota->endpoint}}
 </div>
 
@@ -35,6 +34,7 @@
                 @if($perfil->pivot->read) <span style="color: greenyellow">R</span> @else <span style="color: red">R</span> @endif
                 @if($perfil->pivot->update) <span style="color: greenyellow">U</span> @else <span style="color: red">U</span> @endif
                 @if($perfil->pivot->delete) <span style="color: greenyellow">D</span> @else <span style="color: red">D</span> @endif
+                <a class="btn btn-opaque-semas me-1" href="{{route('rota.settings.edit', ['rota_id' => $rota->id, 'perfil_id' => $perfil->id])}}"><i class="bi bi-gear-fill"></i></a>
             </div>
         </div>
 
