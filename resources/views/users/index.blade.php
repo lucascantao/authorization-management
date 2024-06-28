@@ -81,7 +81,7 @@
                         <td class="text-center">Sem perfil</td>
                     @endif
                     <td class="text-center" style="white-space: nowrap !important">
-                        <a class="btn btn-opaque-semas me-1" href="{{route('user.edit', ['id' => $user->id])}}"><span><i class="bi bi-eye-fill"></i></span></a>
+                        <a class="btn btn-opaque-semas me-1" href="{{route('user.edit', ['id' => $user->id])}}"><span><i class="bi bi-pencil-fill"></i></span></a>
                     </td>
                 </tr>
                 @endforeach

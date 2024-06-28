@@ -76,7 +76,7 @@
                     <td class="text-center">{{$perfil->id}}</td>
                     <td class="text-center">{{$perfil->nome}}</td>
                     <td class="text-center" style="white-space: nowrap !important">
-                        <a class="btn btn-opaque-semas me-1" href="{{route('perfil.detail', ['id' => $perfil->id])}}"><span><i class="bi bi-gear-fill"></i></span></a>
+                        <a class="btn btn-opaque-semas me-1" href="{{route('perfil.detail', ['id' => $perfil->id])}}"><span><i class="bi bi-pencil-fill"></i></span></a>
                     </td>
                 </tr>
                 @endforeach
