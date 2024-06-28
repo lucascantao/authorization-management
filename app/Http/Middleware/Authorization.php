@@ -48,6 +48,7 @@ class Authorization
             'create' => $route_config->pivot->create,
             'store' => $route_config->pivot->create,
             'show' => $route_config->pivot->read,
+            'edit' => $route_config->pivot->update,
             'update' => $route_config->pivot->update,
             'destroy' => $route_config->pivot->delete,
         ];
