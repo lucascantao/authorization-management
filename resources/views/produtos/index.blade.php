@@ -66,9 +66,8 @@
             <thead>
                 <tr>
                     <th scope="col" class="text-center col-1">Id</th>
-                    <th scope="col" class="text-center">Nome</th>
-                    <th scope="col" class="text-center">Descrição</th>
-                    <th scope="col" class="text-center">Preço</th>
+                    <th scope="col" class="text-start">Nome</th>
+                    <th scope="col" class="text-start">Preço</th>
                     <th scope="col" class="text-center col-1" >Ação</th>
                 </tr>
             </thead>
@@ -76,11 +75,11 @@
                 @foreach($produtos as $produto)
                 <tr>
                     <td class="text-center">{{$produto->id}}</td>
-                    <td class="text-center">{{$produto->nome}}</td>
-                    <td class="text-center">{{$produto->descricao}}</td>
-                    <td class="text-center">{{$produto->preco}}</td>
+                    <td class="text-start">{{$produto->nome}}</td>
+                    <td class="text-start">{{ 'R$' . number_format($produto->preco, 2, ",", ".")}}</td>
                     <td class="text-center" style="white-space: nowrap !important">
                         <a class="btn btn-opaque-semas me-1" href="{{route('produto.show', ['produto' => $produto->id])}}"><span><i class="bi bi-eye-fill"></i></span></a>
+                        <a class="btn btn-opaque-semas me-1" href="{{route('produto.edit', ['produto' => $produto->id])}}"><span><i class="bi bi-pencil-fill"></i></span></a>
                     </td>
                 </tr>
                 @endforeach

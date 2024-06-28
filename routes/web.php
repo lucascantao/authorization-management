@@ -27,7 +27,9 @@ Route::prefix('perfil')->middleware(['auth'])->group(function() {
 Route::prefix('rota')->middleware(['auth'])->group(function() {
     Route::get('/', [RotaController::class, 'index'])->name('rota.index');
     Route::get('/{id}/settings', [RotaController::class, 'settings'])->name('rota.settings');
+    Route::get('/{rota_id}/settings/{perfil_id}/edit', [RotaController::class, 'editSettings'])->name('rota.settings.edit');
     Route::get('/{id}/settings/create', [RotaController::class, 'createSettings'])->name('rota.settings.create');
+    Route::get('/{id}/settings/update', [RotaController::class, 'updateSettings'])->name('rota.settings.update');
     Route::post('/settings/store', [RotaController::class, 'storeSettings'])->name('rota.settings.store');
 });
 
