@@ -59,12 +59,12 @@ class ProdutosController extends Controller
         $produto = Produto::find($id);
 
         $request->validate([
-            'nome' => 'required',
-            'preco' => 'required|decimal'
+            'produto_nome' => 'required',
+            'produto_preco' => 'required'
         ]);
 
         $produto->nome = $request['nome'];
-        $produto->preco = $request['preco'];
+        $produto->preco = str_replace(array('R$','.',','), array('','','.'),$request['produto_preco']);
         $produto->descricao = $request['descricao'];
 
         $produto->save();
