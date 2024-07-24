@@ -1,14 +1,14 @@
 .navbar {
-    border-bottom: solid black 2px !important;
+    border-bottom: solid black 1px !important;
 }
 
 #content-header {
-    border-right: solid black 2px !important;
-    border-bottom: solid black 2px !important;
+    border-right: solid black 1px !important;
+    border-bottom: solid black 1px !important;
 }
 
 #sidebar {
-    border-right: solid black 2px !important;
+    border-right: solid black 1px !important;
 }
 
 table {
@@ -16,5 +16,5 @@ table {
 }
 
 .card {
-    border: solid black 2px !important;
+    border: solid black 1px !important;
 }

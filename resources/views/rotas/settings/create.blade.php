@@ -33,20 +33,35 @@
                 </div>
 
                 <div class="mt-4">
-                    <div>
-                        <input class="form-check-input" type="checkbox" id="checkBox_create" name="checkBox_create">
+                    <div class="config-option">
+                        <input hidden class="form-check-input" type="checkbox" id="checkBox_create" name="checkBox_create">
+                        <div class="toggle-box">
+                            <div></div>
+                        </div>
                         <label class="form-check-label" for="checkBox_create">create</label>
                     </div>
-                    <div>
-                        <input class="form-check-input" type="checkbox" id="checkBox_read" name="checkBox_read">
+
+                    <div class="config-option">
+                        <input hidden class="form-check-input" type="checkbox" id="checkBox_read" name="checkBox_read">
+                        <div class="toggle-box">
+                            <div></div>
+                        </div>
                         <label class="form-check-label" for="checkBox_read">read</label>
                     </div>
-                    <div>
-                        <input class="form-check-input" type="checkbox" id="checkBox_update" name="checkBox_update">
+
+                    <div class="config-option">
+                        <input hidden class="form-check-input" type="checkbox" id="checkBox_update" name="checkBox_update">
+                        <div class="toggle-box">
+                            <div></div>
+                        </div>
                         <label class="form-check-label" for="checkBox_update">update</label>
                     </div>
-                    <div>
-                        <input class="form-check-input" type="checkbox" id="checkBox_delete" name="checkBox_delete">
+
+                    <div class="config-option">
+                        <input hidden class="form-check-input" type="checkbox" id="checkBox_delete" name="checkBox_delete">
+                        <div class="toggle-box">
+                            <div></div>
+                        </div>
                         <label class="form-check-label" for="checkBox_delete">delete</label>
                     </div>
                 </div>
@@ -62,6 +77,22 @@
     </div>
 
 
-
 </div>
+<script>
+
+    $('.config-option').each(function() {
+        var el = $(this);
+        el.find('.toggle-box').on('click', function() {
+            var checkbox = el.find('input');
+            if(checkbox.prop('checked')){
+                checkbox.prop("checked", false);
+                $(this).removeClass('active');
+            } else {
+                checkbox.prop("checked", true);
+                $(this).addClass('active');
+            }
+        })
+    })
+
+</script>
 @endsection

@@ -28,21 +28,48 @@
                 </div>
 
                 <div class="mt-4">
-                    <div>
-                        <input class="form-check-input" type="checkbox" id="checkBox_create" name="checkBox_create">
-                        <label class="form-check-label" for="checkBox_create">create</label>
+                    <div class="config-option">
+                        <div>
+                            <label class="form-check-label fw-bold fs-5" for="checkBox_create">create</label>
+                            <p class="text-secondary">Permitir que o usuário crie novos registros</p>
+                        </div>
+                        <input hidden class="form-check-input" type="checkbox" id="checkBox_create" name="checkBox_create">
+                        <div class="toggle-box">
+                            <div></div>
+                        </div>
                     </div>
-                    <div>
-                        <input class="form-check-input" type="checkbox" id="checkBox_read" name="checkBox_read">
-                        <label class="form-check-label" for="checkBox_read">read</label>
+
+                    <div class="config-option">
+                        <div>
+                            <label class="form-check-label fw-bold fs-5" for="checkBox_create">read</label>
+                            <p class="text-secondary">Permitir que o usuário leia novos registros</p>
+                        </div>
+                        <input hidden class="form-check-input" type="checkbox" id="checkBox_read" name="checkBox_read">
+                        <div class="toggle-box">
+                            <div></div>
+                        </div>
                     </div>
-                    <div>
-                        <input class="form-check-input" type="checkbox" id="checkBox_update" name="checkBox_update">
-                        <label class="form-check-label" for="checkBox_update">update</label>
+
+                    <div class="config-option">
+                        <div>
+                            <label class="form-check-label fw-bold fs-5" for="checkBox_create">update</label>
+                            <p class="text-secondary">Permitir que o usuário edite novos registros</p>
+                        </div>
+                        <input hidden class="form-check-input" type="checkbox" id="checkBox_update" name="checkBox_update">
+                        <div class="toggle-box">
+                            <div></div>
+                        </div>
                     </div>
-                    <div>
-                        <input class="form-check-input" type="checkbox" id="checkBox_delete" name="checkBox_delete">
-                        <label class="form-check-label" for="checkBox_delete">delete</label>
+
+                    <div class="config-option">
+                        <div>
+                            <label class="form-check-label fw-bold fs-5" for="checkBox_create">delete</label>
+                            <p class="text-secondary">Permitir que o usuário exclua novos registros</p>
+                        </div>
+                        <input hidden class="form-check-input" type="checkbox" id="checkBox_delete" name="checkBox_delete">
+                        <div class="toggle-box">
+                            <div></div>
+                        </div>
                     </div>
                 </div>
 
@@ -59,4 +86,21 @@
 
 
 </div>
+<script>
+
+    $('.config-option').each(function() {
+        var el = $(this);
+        el.find('.toggle-box').on('click', function() {
+            var checkbox = el.find('input');
+            if(checkbox.prop('checked')){
+                checkbox.prop("checked", false);
+                $(this).removeClass('active');
+            } else {
+                checkbox.prop("checked", true);
+                $(this).addClass('active');
+            }
+        })
+    })
+
+</script>
 @endsection

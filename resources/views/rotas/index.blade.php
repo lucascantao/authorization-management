@@ -6,51 +6,6 @@
     Rotas
 </div>
 
-{{-- <div class="card border-0 m-4 px-6 py-6">
-    <div class="card-body">
-        <span><i class="bi bi-search me-2"></i></span>Pesquisar rota
-        <hr>
-        <div id="filtro" class="row">
-            <div class="col-lg-3 col-md-4">
-                <label class="form-label" for="status_rota">Status</label>
-                <select class="form-select" name="status_rota" id="status_rota">
-                    <option value="">Todos</option>
-                    <option selected value="registrado">Registrado</option>
-                    <option value="excluido">Excluído</option>
-                </select>
-            </div>
-
-            @if(Auth::rota()->perfil_id==3)
-            <div class="col-lg-3 col-md-4 col-sm-12">
-                <label class="form-label" for="usuario_rota">Usuário</label>
-                <select class="form-control" name="usuario_rota" id="usuario_rota">
-                    <option selected value="">Todos</option>
-                    @foreach ($rotas as $usuario)
-                        <option value="{{$usuario->name}}">{{$usuario->name}}</option>
-                    @endforeach
-                </select>
-            </div>
-            @else
-            <div class="col-lg-3 col-md-4 col-sm-12">
-                <label class="form-label" for="usuario_rota">Usuário</label>
-                <select class="form-control" name="usuario_rota" id="usuario_rota">
-                    <option selected value="">Todos</option>
-                    @foreach ($rotas as $usuario)
-                    @if(Auth::rota()->setor_id==$usuario->setor_id)
-                        <option value="{{$usuario->name}}">{{$usuario->name}}</option>
-                    @endif
-                    @endforeach
-                </select>
-            </div>
-            @endif
-
-            <div>
-                <button id="button_clear" class="col-lg-2 btn btn-outline-semas mt-4"><i class="bi bi-eraser"></i> Limpar</button>
-            </div>
-        </div>
-    </div>
-</div> --}}
-
 <div class="card border-0 card-body m-4 px-6 py-6">
 
     {{-- @include('components.notification') --}}
@@ -65,16 +20,16 @@
         <table id="rota_table" class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col" class="text-center col-1">Id</th>
-                    <th scope="col" class="text-center">Endpoint</th>
+                    {{-- <th scope="col" class="text-center col-1">Id</th> --}}
+                    <th scope="col">Endpoint</th>
                     <th scope="col" class="text-center col-1" >Ação</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($rotas as $rota)
                 <tr>
-                    <td class="text-center">{{$rota->id}}</td>
-                    <td class="text-center" style="font-style: italic"><span style="color: rgba(255, 255, 255, 0.459)">http://domain:port</span>/{{$rota->endpoint}}</td>
+                    {{-- <td class="text-center">{{$rota->id}}</td> --}}
+                    <td style="font-style: italic"><span style="color: rgba(70, 70, 70, 0.459)">https://...</span>/{{$rota->endpoint}}</td>
                     <td class="text-center" style="white-space: nowrap !important">
                         <a class="btn btn-opaque-semas me-1" href="{{route('rota.settings', ['id' => $rota->id])}}"><span><i class="bi bi-wrench-adjustable"></i></span></a>
                     </td>

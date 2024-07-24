@@ -2,18 +2,19 @@
   --app-primary: #593370;
   --app-secondary: #ff6600;
   --app-button-pressed: #ffc13c;
-  --app-background-dark1: rgb(14, 14, 14);
-  --app-background-dark2: rgb(38, 38, 38);
-  --app-text: rgb(230, 225, 229);
+  --app-background-1: rgb(224, 224, 224);
+  --app-background-2: rgb(255, 255, 255);
+  --app-text: rgb(0, 0, 0);
 }
 
 * {
-  font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 1px;
+  /* font-family: 'Bebas Neue', sans-serif; */
+  /* letter-spacing: 1px; */
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-  background-color: var(--app-background-dark1);
+  background-color: var(--app-background-1);
 }
 
 nav {
@@ -131,7 +132,7 @@ select {
   height: 100vh;
   width: 250px;
   margin-top: 5.5rem;
-  background-color: var(--app-background-dark2);
+  background-color: var(--app-background-2);
   overflow: hidden;
 }
 
@@ -153,7 +154,7 @@ select {
 }
 
 #content-header {
-  background-color: var(--app-background-dark2);
+  background-color: var(--app-background-2);
   color: var(--app-secondary);
   /* width: fit-content; */
   padding: 8px 2rem 8px 1rem;
@@ -247,7 +248,7 @@ select {
 
 .btn-opaque-semas:hover {
   background-color: var(--app-secondary);
-  color: var(--app-background-dark2);
+  color: var(--app-background-2);
 }
 
 /* .btn-opaque-semas-light */
@@ -337,11 +338,11 @@ select {
 }
 
 .card {
-  background-color: var(--app-background-dark2);
+  background-color: var(--app-background-2);
 }
 
 #logout {
-  background-color: var(--app-background-dark2);
+  background-color: var(--app-background-2);
   border: dashed yellow 1px;
   color: yellow;
 }
@@ -355,7 +356,7 @@ table th {
 /* Route page */
 
 .permission-item {
-  background-color: var(--app-background-dark1);
+  background-color: var(--app-background-1);
 
   padding: 8px 2px;
   border-radius: 2px;
@@ -363,12 +364,60 @@ table th {
 }
 
 .permission-item span{
-  background-color: var(--app-background-dark2);
+  background-color: var(--app-background-2);
   padding: 2px 8px;
   margin-left: 8px;
   margin-right: 8px;
 
   border-radius: 2px;
+}
+
+/* toggle */
+
+.toggle-box {
+    display: flex;
+    /* justify-content: start; */
+    align-items: center;
+    background-color: var(--app-background-1);
+    width: 64px;
+    height: 36px;
+    padding: 4px;
+    border-radius: 50px;
+
+    margin-right: 1rem;
+
+    transition: all .3s;
+}
+
+.toggle-box:hover {
+    cursor: pointer;
+}
+
+.toggle-box div {
+    content: '';
+    height: 28px;
+    width: 28px;
+    background-color: grey;
+    border-radius: 50%;
+    transition: all .3s;
+}
+
+.toggle-box.active {
+    /* justify-content: end; */
+    background-color: var(--app-secondary);
+}
+
+.toggle-box.active div {
+    /* transition: all .3s; */
+    transform: translateX(28px);
+    background-color: white;
+}
+
+.config-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 @media (max-width: 1080px) {
