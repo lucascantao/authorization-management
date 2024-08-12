@@ -21,6 +21,10 @@ Route::prefix('perfil')->middleware(['auth', 'authorization'])->group(function()
     Route::get('/create', [PerfilController::class, 'create'])->name('perfil.create');
     Route::post('/store', [PerfilController::class, 'store'])->name('perfil.store');
     Route::get('/{id}/detail', [PerfilController::class, 'detail'])->name('perfil.detail');
+    Route::get('/{perfil_id}/settings/{rota_id}/edit', [PerfilController::class, 'editSettings'])->name('perfil.settings.edit');
+    Route::get('/{id}/settings/create', [PerfilController::class, 'createSettings'])->name('perfil.settings.create');
+    Route::put('/{id}/settings/update', [PerfilController::class, 'updateSettings'])->name('perfil.settings.update');
+    Route::post('/settings/store', [PerfilController::class, 'storeSettings'])->name('perfil.settings.store');
 });
 
 //Rotas

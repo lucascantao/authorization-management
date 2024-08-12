@@ -40,9 +40,6 @@ class RotaController extends Controller
     }
 
     public function storeSettings(Request $request) {
-        // dd(isset($request->all()['perfil_id']));
-
-
         $data = $request->all();
 
         $rota = Rota::find($data['rota_id']);

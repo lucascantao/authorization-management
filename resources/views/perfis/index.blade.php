@@ -6,51 +6,6 @@
     Perfis
 </div>
 
-{{-- <div class="card border-0 m-4 px-6 py-6">
-    <div class="card-body">
-        <span><i class="bi bi-search me-2"></i></span>Pesquisar rota
-        <hr>
-        <div id="filtro" class="row">
-            <div class="col-lg-3 col-md-4">
-                <label class="form-label" for="status_rota">Status</label>
-                <select class="form-select" name="status_rota" id="status_rota">
-                    <option value="">Todos</option>
-                    <option selected value="registrado">Registrado</option>
-                    <option value="excluido">Excluído</option>
-                </select>
-            </div>
-
-            @if(Auth::rota()->perfil_id==3)
-            <div class="col-lg-3 col-md-4 col-sm-12">
-                <label class="form-label" for="usuario_rota">Usuário</label>
-                <select class="form-control" name="usuario_rota" id="usuario_rota">
-                    <option selected value="">Todos</option>
-                    @foreach ($rotas as $usuario)
-                        <option value="{{$usuario->name}}">{{$usuario->name}}</option>
-                    @endforeach
-                </select>
-            </div>
-            @else
-            <div class="col-lg-3 col-md-4 col-sm-12">
-                <label class="form-label" for="usuario_rota">Usuário</label>
-                <select class="form-control" name="usuario_rota" id="usuario_rota">
-                    <option selected value="">Todos</option>
-                    @foreach ($rotas as $usuario)
-                    @if(Auth::rota()->setor_id==$usuario->setor_id)
-                        <option value="{{$usuario->name}}">{{$usuario->name}}</option>
-                    @endif
-                    @endforeach
-                </select>
-            </div>
-            @endif
-
-            <div>
-                <button id="button_clear" class="col-lg-2 btn btn-outline-semas mt-4"><i class="bi bi-eraser"></i> Limpar</button>
-            </div>
-        </div>
-    </div>
-</div> --}}
-
 <div class="card border-0 card-body m-4 px-6 py-6">
 
     {{-- @include('components.notification') --}}
@@ -66,7 +21,7 @@
             <thead>
                 <tr>
                     <th scope="col" class="text-center col-1">Id</th>
-                    <th scope="col" class="text-center">Nome</th>
+                    <th scope="col" class="">Nome</th>
                     <th scope="col" class="text-center col-1" >Ação</th>
                 </tr>
             </thead>
@@ -74,7 +29,7 @@
                 @foreach($perfis as $perfil)
                 <tr>
                     <td class="text-center">{{$perfil->id}}</td>
-                    <td class="text-center">{{$perfil->nome}}</td>
+                    <td class="">{{$perfil->nome}}</td>
                     <td class="text-center" style="white-space: nowrap !important">
                         <a class="btn btn-opaque-semas me-1" href="{{route('perfil.detail', ['id' => $perfil->id])}}"><span><i class="bi bi-pencil-fill"></i></span></a>
                     </td>
